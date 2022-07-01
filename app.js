@@ -6,12 +6,13 @@ const connectDB = require("./config/database")
 
 // const TodoTask = require("./models/TodoTask");
 const homeRoutes = require('./routes/login') //first homepage
+const authRoutes = require('./routes/auth') //Authentication page for middleware
+const regRoutes = require('./routes/register') //first homepage
 const editRoutes = require('./routes/edit') //page with teacher rights enabling data entry
 const dashRoutes = require('./routes/dashboard') //page with parent rights enabling viewing and limited commenting
 require('dotenv').config({path: './config/.env'})
 
-//Connect to Mongo exported from database.js in the config folder
-connectDB()
+
 
 //Set Middleware
 app.set("view engine", "ejs");
@@ -20,6 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //Routes
 app.use("/login", homeRoutes) //homepage. Do I need a login page?
+app.use("/register", regRoutes) //parents pages
+app.use("/auth", authRoutes) //parents pages
 app.use("/edit", editRoutes) //teacher pages
 app.use("/dashboard", dashRoutes) //parents pages
 
@@ -29,4 +32,8 @@ app.get("/", (req, res) => {
 })
 
 //Start Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(process.env.PORT || PORT, async () => {
+    //Connect to Mongo exported from database.js in the config folder
+    await connectDB()
+    console.log(`Server running on port ${PORT}`)}
+    );

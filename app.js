@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require("mongoose")
-const PORT = 5555
+// const PORT = 5555
 const connectDB = require("./config/database")
 
 // const TodoTask = require("./models/TodoTask");
@@ -32,8 +32,8 @@ app.get("/", (req, res) => {
 })
 
 //Start Server
-app.listen(process.env.PORT || PORT, async () => {
+app.listen(process.env.PORT, async () => {
     //Connect to Mongo exported from database.js in the config folder
     await connectDB()
-    console.log(`Server running on port ${PORT}`)}
+    console.log(`Server running on port ${process.env.PORT}`)}
     );

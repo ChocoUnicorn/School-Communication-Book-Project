@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 //Routes
 app.use("/login", homeRoutes) //homepage. Do I need a login page?
 app.use("/register", regRoutes) //parents pages
-app.use("/auth", authRoutes) //parents pages
+app.use("/auth", authRoutes) //authentication pages
 app.use("/edit", editRoutes) //teacher pages
 app.use("/dashboard", dashRoutes) //parents pages
 

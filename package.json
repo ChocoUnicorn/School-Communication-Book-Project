@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "tailwindcss -i ./public/style.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./public/style.css -o ./dist/output.css --watch"
+
   },
   "repository": {
     "type": "git",
@@ -33,5 +36,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
   }
 }

@@ -10,6 +10,7 @@ const authRoutes = require('./routes/auth') //Authentication page for middleware
 const regRoutes = require('./routes/register') //first homepage
 const editRoutes = require('./routes/edit') //page with teacher rights enabling data entry
 const dashRoutes = require('./routes/dashboard') //page with parent rights enabling viewing and limited commenting
+const classRoutes = require('./routes/classroutes') //page with parent rights enabling viewing 
 require('dotenv').config({path: './config/.env'})
 
 
@@ -25,7 +26,7 @@ app.use("/register", regRoutes) //parents pages
 app.use("/auth", authRoutes) //authentication pages
 app.use("/edit", editRoutes) //teacher pages
 app.use("/dashboard", dashRoutes) //parents pages
-
+app.use("/classpost", classRoutes) 
 
 app.get("/", (req, res) => {
     res.send("<h1>This homepage is working</h1>")

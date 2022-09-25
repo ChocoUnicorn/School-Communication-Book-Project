@@ -1,16 +1,13 @@
 const express = require('express')
 const app = express()
 const mongoose = require("mongoose")
-// const PORT = 5555
 const connectDB = require("./config/database")
+//require routes
+const homeRoutes = require('./routes/main') //first homepage
+const classRoutes = require('./routes/classposts') //page with parent rights enabling viewing and limited commenting
+const classCommentRoutes = require('./routes/classcomments') //page with parent rights enabling viewing and limited commenting
 
-// const TodoTask = require("./models/TodoTask");
-const homeRoutes = require('./routes/login') //first homepage
-const authRoutes = require('./routes/auth') //Authentication page for middleware
-const regRoutes = require('./routes/register') //first homepage
-const editRoutes = require('./routes/edit') //page with teacher rights enabling data entry
-const dashRoutes = require('./routes/dashboard') //page with parent rights enabling viewing and limited commenting
-const classRoutes = require('./routes/classroutes') //page with parent rights enabling viewing 
+//require environment variable
 require('dotenv').config({path: './config/.env'})
 
 
@@ -21,12 +18,9 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
 
 //Routes
-app.use("/login", homeRoutes) //homepage. Do I need a login page?
-app.use("/register", regRoutes) //parents pages
-app.use("/auth", authRoutes) //authentication pages
-app.use("/edit", editRoutes) //teacher pages
-app.use("/dashboard", dashRoutes) //parents pages
-app.use("/classpost", classRoutes) 
+app.use("/", homeRoutes) //homepage. Do I need a login page?
+app.use("/classpost", classRoutes) //classpost routes
+app.use("/classcomments", classCommentRoutes) //class comment routes
 
 app.get("/", (req, res) => {
     res.send("<h1>This homepage is working</h1>")

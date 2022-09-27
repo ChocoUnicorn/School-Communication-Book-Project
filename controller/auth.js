@@ -1,12 +1,16 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const LocalStrategy = require("passport-local").Strategy;
+const {local} = require("../config/passport")
+
+
 
 exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect("/profile");
   }
-  res.render("login", {
+  res.render("parentLogin.ejs", {
     title: "Login",
   });
 };
@@ -20,11 +24,12 @@ exports.postLogin = (req, res, next) => {
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
-    return res.redirect("/login");
+    return res.redirect("/parentLogin");
   }
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
   });
+
 
   passport.authenticate("local", (err, user, info) => {
     if (err) {
@@ -32,7 +37,7 @@ exports.postLogin = (req, res, next) => {
     }
     if (!user) {
       req.flash("errors", info);
-      return res.redirect("/login");
+      return res.redirect("/parentLogin");
     }
     req.logIn(user, (err) => {
       if (err) {

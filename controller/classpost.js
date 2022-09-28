@@ -35,7 +35,7 @@ module.exports = {
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
 
-        await Post.create({
+        await Classpost.create({
             title: req.body.title,
             image: result.secure_url,
             cloudinaryId: result.public_id,
@@ -51,7 +51,7 @@ module.exports = {
     },
     likePost: async (req, res) => {
         try {
-        await Post.findOneAndUpdate(
+        await Classpost.findOneAndUpdate(
             { _id: req.params.id },
             {
             $inc: { likes: 1 },
@@ -67,7 +67,7 @@ module.exports = {
         try {
 
             // Find post by id
-            let post = await Post.findById({ _id: req.params.id });
+            let post = await Classpost.findById({ _id: req.params.id });
             // Delete image from cloudinary
             await cloudinary.uploader.destroy(post.cloudinaryId);
             // Delete post from db

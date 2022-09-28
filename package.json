@@ -5,9 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "build": "tailwindcss -i ./public/style.css -o ./dist/output.css",
-    "watch": "tailwindcss -i ./public/style.css -o ./dist/output.css --watch"
+    "start": "nodemon app.js"
+    
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,6 @@
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.32.0",
     "connect-mongo": "^4.6.0",
-    "daisyui": "^2.31.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
@@ -39,7 +37,5 @@
     "passport-local": "^1.0.0",
     "validator": "^13.7.0"
   },
-  "devDependencies": {
-    "tailwindcss": "^3.1.8"
-  }
+  "devDependencies": {}
 }

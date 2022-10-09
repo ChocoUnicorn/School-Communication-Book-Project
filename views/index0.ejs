@@ -1,20 +1,138 @@
-
 <%- include('partials/header') -%>
 
     <!-- <main class="container">
         <div class="row justify-content-around mt-5">
-            <a href="/login" class="col-3 btn btn-primary"> Login</a>
-            <a href="/register" class="col-3 btn btn-primary"> Sign up</a>
+            <a href="/parentLogin" class="col-3 btn btn-primary"> Login</a>
+            <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
         </div>
     </main> -->
-    <h3>Please select the appropriate box to confirm whether you are a parent or a teacher</h3>
-    <div class="flex flex-col w-full border-opacity-50">
-        <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
-            <a href="/indexParents" class="col-3 btn btn-primary"> Parents </a>
+    <!-- Banner -->
+    <div id="banner-wrapper">
+        <div id="banner" class="box container">
+            <div class="col-12-medium">
+                <img class="banner-image" src="./images/pexels-yan-krukov-8613319.jpg" alt="">
+                <br>
+            </div>
+            <div class="row">
+    
+                <div class="col-7 col-12-medium">
+                    <h2>Teach||Learn||Connect</h2>
+                    <h5>The best way parents and teachers can communicate and raise the next generation</h5>
+                </div>
+                <div class="col-5 col-12-medium">
+                    <ul>
+                        <li><a href="/parentLogin" class="button large icon solid fa-arrow-circle-right">Login</a></li>
+                        <li><a href="/signup" class="button alt large icon solid fa-arrow-circle-right">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="divider">OR</div>
-        <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
-            <a href="\indexTeachers" class="col-3 btn btn-primary"> Teachers</a>
+    </div>
+    
+    <!-- Features -->
+    <div id="features-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-12-medium">
+    
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="#" class="image featured"><img src="images/pexels-max-fischer-5212345.jpg" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>Classroom learning</h2>
+                                <p><strong>Create a positive culture</strong></p>
+                            </header>
+                            <p>Teachers can encourage students for any skill or value — whether it's working hard, being
+                                kind, helping others or
+                                something else</p>
+                        </div>
+                    </section>
+    
+                </div>
+                <div class="col-4 col-12-medium">
+    
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="#" class="image featured"><img src="images/pexels-pixabay-235554.jpg" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>HomeWork & Home Schooling</h2>
+                                <p><strong> Share moments with parents</strong></p>
+                            </header>
+                            <p>Get parents engaged by sharing photos and videos of wonderful classroom moments</p>
+                        </div>
+                    </section>
+    
+                </div>
+                <div class="col-4 col-12-medium">
+    
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="#" class="image featured"><img src="images/pexels-max-fischer-5212700.jpg" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>Team Learning</h2>
+                                <p><strong>Give students a voice</strong></p>
+                            </header>
+                            <p>Through Team building and Collaboration, Students can showcase and share their learning by
+                                adding photos and videos to their own portfolios</p>
+                        </div>
+                    </section>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row gtr-200">
+                <div class="col-4 col-12-medium">
+    
+                    <!-- Sidebar -->
+                    <div id="sidebar">
+                        <section class="widget thumbnails">
+                            <h3>Interesting stuff</h3>
+                            <div class="grid">
+                                <div class="row gtr-50">
+                                    <div class="col-6"><a href="#" class="image fit"><img
+                                                src="images/pexels-rodnae-productions-8363052.jpg" alt="" /></a></div>
+                                    <div class="col-6"><a href="#" class="image fit"><img
+                                                src="images/pexels-rodnae-productions-8363570.jpg" alt="" /></a></div>
+                                    <div class="col-6"><a href="#" class="image fit"><img
+                                                src="images/pexels-roman-odintsov-11025029.jpg" alt="" /></a></div>
+                                    <div class="col-6"><a href="#" class="image fit"><img
+                                                src="images/pexels-yan-krukov-8613091.jpg" alt="" /></a></div>
+                                </div>
+                            </div>
+                            <a href="#" class="button icon fa-file-alt">More</a>
+                        </section>
+                    </div>
+    
+                </div>
+                <div class="col-8 col-12-medium imp-medium">
+    
+                    <!-- Content -->
+                    <div id="content">
+                        <section class="last">
+                            <h2>So what's this all about?</h2>
+                            <p>This is <strong>Verti</strong>, a free and fully responsive HTML5 site template by <a
+                                    href="http://html5up.net">HTML5 UP</a>.
+                                Verti is released under the <a href="http://html5up.net/license">Creative Commons
+                                    Attribution license</a>, so feel free to use it for any personal or commercial project
+                                you might have going on (just don't forget to credit us for the design!)</p>
+                            <p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper
+                                bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod
+                                quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit
+                                amet phasellus quam turpis.</p>
+                            <a href="#" class="button icon solid fa-arrow-circle-right">Continue Reading</a>
+                        </section>
+                    </div>
+    
+                </div>
+            </div>
         </div>
     </div>
 

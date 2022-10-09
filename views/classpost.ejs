@@ -3,25 +3,25 @@
         <div class="row justify-content-center mt-5">
             <div class="col-6">
                 <h2>
-                    <%= classPost.title%>
+                    <%=  post.title%>
                 </h2>
-                <img class="img-fluid" src="<%= classPost.image%>" />
+                <img class="img-fluid" src="<%=post.image%>" />
                 <div class="row justify-content-between">
 
-                    <form class="col-1" action="/classPost/likeClassPost/<%= classPost.id %>?_method=PUT" method="POST">
+                    <form class="col-1" action="/classpost/likeClassPost/<%= post.id %>?_method=PUT" method="POST">
                         <button class="btn btn-primary fa-solid fa-thumbs-up" type="submit"></button>
                     </form>
-                    <h3 class="col-3">Likes: <%= classPost.likes %></h3>
+                    <h3 class="col-3">Likes: <%= post.likes %></h3>
 
                     <!-- edit post -->
-                    <%if(post.user==user.id){ %>
-                        <form action="/classPost/editPost/<%= classPost.id %>?_method=PATCH" method="POST" class="col-3">
+                    <!-- <%if(post.user==user.id){ %>
+                        <form action="/classpost/editPost/<%= post.id %>?_method=PATCH" method="POST" class="col-3">
                             <button class="fa-sharp fa-solid fa-pen-to-square" type="submit"></button>
                         </form>
-                    <%}%>
+                    <%}%> -->
                     <!-- delete post -->
                     <%if(post.user==user.id){ %>
-                        <form action="/classPost/deletePost/<%= classPost.id %>?_method=DELETE" method="POST" class="col-3">
+                        <form action="/classpost/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
                             <button class="btn btn-primary fa fa-trash" type="submit"></button>
                         </form>
                     <%}%>
@@ -29,12 +29,12 @@
             </div>
             <div class="col-3 mt-5">
                 <p>
-                    <%= classPost.caption %>
+                    <%= post.caption %>
                 </p>
             </div>
             <div>
                 <h2>Add a Comment</h2>
-                <form class="col-1" action="/classComments/createComment/<%=classPost._id%>" method="POST">
+                <form class="col-1" action="/classcomments/createComment/<%=post._id%>" method="POST">
                     <div class="mb-3">
 
                         <label for="comment" class="form-label">Comment</label>
@@ -51,9 +51,9 @@
                                 <div class="row justify-content-between">
                                     <!-- Acknowledge / like comment -->
                                     <form class="col-1"
-                                        action="/classComments/likeComment/<%= comment[i]._id %>/<%=post._id%>?_method=PUT"
+                                        action="/classcomments/likeComment/<%= comment[i]._id %>/<%=post._id%>?_method=PUT"
                                         method="POST">
-                                        <button class="btn btn-primary fa-solid fa-thumbs-up"></i>" type="submit"></button>
+                                        <button class="btn btn-primary"  type="submit"> <i class="fa-solid fa-thumbs-up"></i></button>
                                     </form>
                                     <h6 class="col-6">Likes: <%= comment[i].likes %>
                                     </h6>

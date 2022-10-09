@@ -22,10 +22,10 @@ module.exports = {
     },
     getPost: async (req, res) => {
         try {
-        const post = await Post.findById(req.params.id);
+        const post = await Classpost.findById(req.params.id);
         const comment = await Comment.find({post: req.params.id}).sort({createdAt: "desc"}).lean()
-        res.render("post.ejs", { post: post, user: req.user, comment: comment });
-        console.log(comment[0]._id)
+        res.render("classpost.ejs", { post: post, user: req.user, comment: comment });
+        console.log(comment[0].id)
         } catch (err) {
         console.log(err);
         }
@@ -58,7 +58,7 @@ module.exports = {
             }
         );
         console.log("Likes +1");
-        res.redirect(`/post/${req.params.id}`);
+        res.redirect(`/classpost/${req.params.id}`);
         } catch (err) {
         console.log(err);
         }
@@ -71,7 +71,7 @@ module.exports = {
             // Delete image from cloudinary
             await cloudinary.uploader.destroy(post.cloudinaryId);
             // Delete post from db
-            await Post.remove({ _id: req.params.id });
+            await Classpost.remove({ _id: req.params.id });
             console.log("Deleted Post");
             res.redirect("/profile");
         } catch (err) {

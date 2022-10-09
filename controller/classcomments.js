@@ -16,7 +16,7 @@ module.exports = {
                 createdBy: req.user.userName,
         });
         console.log("Comment has been added!");
-        res.redirect("/post/"+req.params.postId);
+        res.redirect("/classpost/"+req.params.postId);
         } catch (err) {
         console.log(err);
         }
@@ -34,7 +34,7 @@ module.exports = {
             }
         );
         console.log("Like added");
-        res.redirect(`/post/${req.params.postId}`);
+        res.redirect(`/classpost/${req.params.postId}`);
     } catch (err) {
         console.log(err);
     }
@@ -45,7 +45,7 @@ module.exports = {
             await Comment.findByIdAndDelete({ _id: req.params.commentId});
             console.log(req.params.id)
             console.log("Comment deleted");
-            res.redirect(`/post/${req.params.postId}`);
+            res.redirect(`/classpost/${req.params.postId}`);
         } catch (err) {
             console.log(err);
             res.redirect("/profile");
